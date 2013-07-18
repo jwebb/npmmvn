@@ -14,7 +14,7 @@ To get started, add an extra entry to your `package.json`:
 
 And install `npmmvn` globally:
 
-    `npm install -g npmmvn`
+    npm install -g npmmvn
 
 This tool provides two commands:
 
@@ -51,8 +51,7 @@ or upgrade existing modules. So, restore into an empty `node_modules` to
 ensure correct behaviour.
 
 * We look at the installed contents of `node_modules` - we don't check that
-they match `packages.json` or that they are in any way clean. In particular,
-this will bite if you need native code modules to work on multiple platforms.
+they match `packages.json` or that they are in any way clean. 
 
 * Npm rebuild scripts for some modules do their own downloads. Npmmvn currently
 doesn't help with that. The easiest option is to hack the module to download
