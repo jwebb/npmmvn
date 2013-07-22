@@ -25,19 +25,19 @@ You want to do this before you commit a change which requires new or updated
 NPM packages.
 
 Recursively deploys every module found in `node_modules` as a Maven artifact
-with groupId `node_modules`, artifactId and version taken from each module's
-`package.json`. Skips modules which already exist in the repository. Writes a
-`.npmmvn.json` file which records this structure, and which should be committed
-to source control.
+with groupId `node_modules`, and artifactId and version taken from each
+module's `package.json`. Skips modules which already exist in the repository.
+Writes a `.npmmvn.json` file which records this structure, and which should be
+committed to source control.
 
 npmmvn restore
 --------------
 
-You want to do this as part of your CI build (and also when you first check out
-a repository, though I'd probably prefer to just do `npm install` in that
-case).
+You want to do this as part of your CI build (and possibly also when you first
+check out a repository, though I'd probably prefer to just do `npm install` in
+that case).
 
-Reads the `npmmvn.json` file and downloads and extracts every referenced
+Reads the `.npmmvn.json` file and downloads and extracts every referenced
 package which doesn't currently exist locally into the `node_modules`
 directory. The result is the same nested dependency structure as the original.
 
@@ -79,3 +79,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jwebb/npmmvn/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
